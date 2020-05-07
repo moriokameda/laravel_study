@@ -9,7 +9,11 @@
   <div class="container">
     <h1>Blog Posts</h1>
     <ul>
-      <li><a href="">title</a></li>
+      @forelse ($posts as $post)
+        <li><a href="">{{ $post->title }}</a></li>
+      @empty
+        <li><a href="">No post yet!!</a></li>
+      @endforelse
     </ul>
   </div>
 </body>

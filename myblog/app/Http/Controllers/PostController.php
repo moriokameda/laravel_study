@@ -9,7 +9,8 @@ class PostController extends Controller
   public function index() {
     // $posts = Post::orderBy('Created_at', 'desc')
     $posts = Post::latest()->get();
-    dd($posts->toArray());
-    return view('posts.index');
+    // dd($posts->toArray());
+    // return view('posts.index', ['posts' => $posts]);
+    return view('posts.index')->with('posts', $posts);// 上と同じ意味
   }
 }
