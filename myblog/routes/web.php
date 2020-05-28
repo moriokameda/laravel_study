@@ -20,3 +20,7 @@ Route::get('/posts', 'PostController@index');
 // Route::get('/posts/{id}', 'PostController@show');
 Route::get('/posts/{post}', 'PostController@show')->where('post', '[0-9]+');
 Route::get('/posts/create', 'PostController@create');
+Route::post('/posts/regist', 'PostController@store');
+Route::get('/posts/{post}/edit', 'PostController@edit');
+Route::patch('/posts/{post}', 'PostController@update');
+Route::delete('/posts/{post}', 'PostController@destroy');
