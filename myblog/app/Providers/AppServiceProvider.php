@@ -24,5 +24,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        if (\DB::getDriverName() === 'sqlite') {
+            # code...
+            \DB::statement(\DB::raw('PRAGMA foreign_keys=1'));
+        }
     }
 }

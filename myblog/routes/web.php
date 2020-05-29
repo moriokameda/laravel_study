@@ -24,3 +24,5 @@ Route::post('/posts/regist', 'PostController@store');
 Route::get('/posts/{post}/edit', 'PostController@edit');
 Route::patch('/posts/{post}', 'PostController@update');
 Route::delete('/posts/{post}', 'PostController@destroy');
+Route::post('/posts/{post}/comments', 'CommentsController@store');
+Route::delete('/posts/{post}/comments/{comment}', 'CommentsController@destroy');
